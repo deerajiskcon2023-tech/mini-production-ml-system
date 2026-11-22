@@ -1,0 +1,53 @@
+{
+  "dataset": {
+    "rows": 284807,
+    "columns": 31,
+    "duplicates_including_first_occurrence": 1081,
+    "missing_values": 0,
+    "fraud_total": 492,
+    "legitimate_total": 284315
+  },
+  "split": {
+    "method": "chronological, no shuffle",
+    "train_rows": 170884,
+    "train_fraud": 360,
+    "validation_rows": 56961,
+    "validation_fraud": 57,
+    "test_rows": 56962,
+    "test_fraud": 75
+  },
+  "validation": {
+    "logistic_regression_pr_auc": 0.7718772104989219,
+    "logistic_regression_roc_auc": 0.9709273359132401,
+    "hist_gradient_boosting_pr_auc": 0.7615548602780378,
+    "hist_gradient_boosting_roc_auc": 0.9726066801334843,
+    "selected_model": "Logistic Regression",
+    "selected_threshold": 0.9999860881925634,
+    "precision_at_threshold": 0.9090909090909091,
+    "recall_at_threshold": 0.7017543859649122,
+    "f1_at_threshold": 0.7920792079203002
+  },
+  "test": {
+    "pr_auc": 0.7436264160763403,
+    "roc_auc": 0.9820257703869073,
+    "precision": 0.9433962264150944,
+    "recall": 0.6666666666666666,
+    "f1": 0.78125,
+    "confusion_matrix_tn_fp_fn_tp": [
+      [
+        56884,
+        3
+      ],
+      [
+        25,
+        50
+      ]
+    ]
+  },
+  "notes": [
+    "The threshold was selected using validation data only.",
+    "The test set was evaluated once after model and threshold selection.",
+    "Duplicate rows were counted and retained; they were not silently removed.",
+    "StandardScaler is inside the Logistic Regression pipeline and is fit on training data only."
+  ]
+}
